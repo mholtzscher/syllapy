@@ -1,0 +1,7 @@
+__title__ = 'syllapy'
+__version__ = '0.1'
+__summary__ = 'spaCy pipeline component for adding syllable meta data to Token objects.'
+__uri__ = 'https://github.com/mholtzscher/syllapy'
+__author__ = 'Michael Holtzscher'
+__email__ = 'mholtz@protonmail.com'
+__license__ = 'MIT'

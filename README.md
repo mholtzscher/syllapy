@@ -1,1 +1,1 @@
-# syllapy
+# SyllaPy
