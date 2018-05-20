@@ -14,7 +14,7 @@ def count(word):
 def _syllables(token):
     syll_count = 0
     vowels = 'aeiouy'
-    word = token.text.lower().strip(".:;?!")
+    word = token.lower().strip(".:;?!")
     if word[0] in vowels:
         syll_count += 1
     for index in range(1, len(word)):
