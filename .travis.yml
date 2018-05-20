@@ -3,12 +3,11 @@ python:
   - "3.6"
 
 # command to install dependencies
-install:
-  - make setup
+install: "make"
 
 # command to run tests
 script:
-  - make test
+    - make test
 
 deploy:
   provider: pypi

@@ -1,9 +1,6 @@
-setup:
-	pip install pipenv
-	pipenv install --dev --three
-
-activate:
-	pipenv shell -c
+init:
+    pip install pipenv
+    pipenv install --dev
 
 test:
-	pipenv run -- py.test tests -s -v
+    pipenv run py.test tests
