@@ -1,20 +1,25 @@
 # coding: utf8
+from string import punctuation
+
 from .data_loader import load_dict
 
 word_dict = load_dict()
 
 
 def count(word):
-    word = word.strip().lower()
+    if word is None:
+        return 0
+    word = word.strip().lower().strip(punctuation)
+    if len(word) == 0:
+        return 0
     if word in word_dict:
         return word_dict[word]
     return _syllables(word)
 
 
-def _syllables(token):
+def _syllables(word):
     syllable_count = 0
     vowels = 'aeiouy'
-    word = token.lower().strip(".:;?!")
     if word[0] in vowels:
         syllable_count += 1
     for index in range(1, len(word)):
