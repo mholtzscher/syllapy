@@ -32,7 +32,6 @@ def setup_package():
         license=about['__license__'],
         packages=find_packages(),
         install_requires=[
-            'spacy>=2.0.0,<3.0.0',
         ],
         zip_safe=False,
     )
