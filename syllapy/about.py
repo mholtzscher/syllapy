@@ -1,5 +1,5 @@
 __title__ = 'syllapy'
-__version__ = '0.1'
+__version__ = '0.2'
 __summary__ = 'Calculate syllables for English language words.'
 __uri__ = 'https://github.com/mholtzscher/syllapy'
 __author__ = 'Michael Holtzscher'
