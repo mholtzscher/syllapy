@@ -3,6 +3,8 @@
 
 """Tests for `syllapy` package."""
 
+from string import punctuation
+
 import syllapy
 
 
@@ -14,6 +16,14 @@ def test_none():
     assert 0 == syllapy.count(None)
 
 
+def test_bool():
+    assert 0 == syllapy.count(True)
+
+
+def test_int():
+    assert 0 == syllapy.count(2)
+
+
 def test_empty():
     assert 0 == syllapy.count("")
 
@@ -23,4 +33,5 @@ def test_space():
 
 
 def test_punctuation_only():
-    assert 0 == syllapy.count(",")
+    for p in punctuation:
+        assert 0 == syllapy.count(p)
