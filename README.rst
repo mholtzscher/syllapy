@@ -20,7 +20,7 @@ SyllaPy
 
 
 
-Calculate syllables for English words.
+Calculate syllable counts for English words.
 
 
 * Free software: MIT license
