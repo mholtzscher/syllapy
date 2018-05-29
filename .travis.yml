@@ -1,28 +1,29 @@
+# Config file for automatic testing at travis-ci.org
+
 language: python
 python:
-  - "3.6"
+  - 3.6
+  - 3.5
+  - 3.4
+  - 2.7
 
-# command to install dependencies
-install:
-  # Install conda
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - export PATH="$HOME/miniconda/bin:$PATH"
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update conda
+# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
+install: pip install -U tox-travis
 
-  # Install dependencies
-  - conda env create -n test -f environment.yml
-  - source activate test
+# Command to run tests, e.g. python setup.py test
+script: tox
 
-# command to run tests
-script:
-  - pytest
-
+# Assuming you have installed the travis-ci CLI tool, after you
+# create the Github repo and add it to Travis, run the
+# following command to finish PyPI deployment setup:
+# $ travis encrypt --add deploy.password
 deploy:
   provider: pypi
+  distributions: sdist bdist_wheel
   user: mholtzscher
   password:
-    secure: juZdLMIR5Z3ja2NjrKXjf1UaVujrvDz1OiT+qQPxtfp3LZqv3VlIs9ZWixBPD7K7Zb4QZRNFr++aO6XI1f3a/5tgiIvbHeOQNGWsCnyhmt0G+PWeuWe3L1L4UOVuNII8dfGsRQ917AC5sVdbM0xZkiPFyJ4fatllFCLhtBcR+9O8ZdQPjyZKCCnlFFCiGHoDx85zNZplJkfaFiKAeyuSgERq3+DCI6oln7J8R/WqeHhlgL1+J1k1oMZaDFg27zjkq1sdv7yv3sEV95K5Bn45yuWK01fE37h1OnE8EXtF8jMF0v/GCIf41Nu4S+35rD74VCFgWx/fvqYd54kWeT8l/GgKjAISbFsaD8Plb4owTEOFYTpINmTCxNP62LWdxyO8GWKCVphwg0YZGFYi6zzwMtx4yDkIVbHWso13zcI83o2cDlREzRKcsklCvntnjdGqQT9HM52YVwKvA5XXVdsH38y+YnAealqHeBYpv/fJahoO1LnhGRux8NLvorzpXpzRF+P7B31BeoqVyzkwvgLM6KG+hhcOz1nVMjhAjJHCG58dpfcGJ+Jhz1D7U6VF5WZpwjJO6o5jVrPtXP24/j3bdc5gIvQoGMBwAfTazYago1H7p9CgJKyMo9pZAS8yOMax0MqMmYPiGdgN6AMugB0oU8aYum0lJwIB5kSsQPrH0zg=
+        secure: juZdLMIR5Z3ja2NjrKXjf1UaVujrvDz1OiT+qQPxtfp3LZqv3VlIs9ZWixBPD7K7Zb4QZRNFr++aO6XI1f3a/5tgiIvbHeOQNGWsCnyhmt0G+PWeuWe3L1L4UOVuNII8dfGsRQ917AC5sVdbM0xZkiPFyJ4fatllFCLhtBcR+9O8ZdQPjyZKCCnlFFCiGHoDx85zNZplJkfaFiKAeyuSgERq3+DCI6oln7J8R/WqeHhlgL1+J1k1oMZaDFg27zjkq1sdv7yv3sEV95K5Bn45yuWK01fE37h1OnE8EXtF8jMF0v/GCIf41Nu4S+35rD74VCFgWx/fvqYd54kWeT8l/GgKjAISbFsaD8Plb4owTEOFYTpINmTCxNP62LWdxyO8GWKCVphwg0YZGFYi6zzwMtx4yDkIVbHWso13zcI83o2cDlREzRKcsklCvntnjdGqQT9HM52YVwKvA5XXVdsH38y+YnAealqHeBYpv/fJahoO1LnhGRux8NLvorzpXpzRF+P7B31BeoqVyzkwvgLM6KG+hhcOz1nVMjhAjJHCG58dpfcGJ+Jhz1D7U6VF5WZpwjJO6o5jVrPtXP24/j3bdc5gIvQoGMBwAfTazYago1H7p9CgJKyMo9pZAS8yOMax0MqMmYPiGdgN6AMugB0oU8aYum0lJwIB5kSsQPrH0zg=
   on:
     tags: true
+    repo: mholtzscher/syllapy
+    python: 3.6

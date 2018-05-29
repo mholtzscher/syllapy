@@ -1,13 +1,30 @@
 =======
-Syllapy
+SyllaPy
 =======
 
-Calculate syllable count for English Language words.
 
-.. image:: https://travis-ci.org/mholtzscher/syllapy.svg?branch=master
-	:target: https://travis-ci.org/mholtzscher/syllapy
-.. image:: https://badge.fury.io/py/syllapy.svg
-	:target: https://badge.fury.io/py/syllapy
+.. image:: https://img.shields.io/pypi/v/syllapy.svg
+        :target: https://pypi.python.org/pypi/syllapy
+
+.. image:: https://img.shields.io/travis/mholtzscher/syllapy.svg
+        :target: https://travis-ci.org/mholtzscher/syllapy
+
+.. image:: https://readthedocs.org/projects/syllapy/badge/?version=latest
+        :target: https://syllapy.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+.. image:: https://pyup.io/repos/github/mholtzscher/syllapy/shield.svg
+     :target: https://pyup.io/repos/github/mholtzscher/syllapy/
+     :alt: Updates
+
+
+
+Calculate syllables for English words.
+
+
+* Free software: MIT license
+* Documentation: https://syllapy.readthedocs.io.
 
 
 ************
@@ -25,3 +42,11 @@ Usage
 
     import syllapy
     count = syllapy.count('additional')
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage

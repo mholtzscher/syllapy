@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""Tests for `syllapy` package."""
+
 import syllapy
 
 

@@ -1,4 +1,11 @@
-# coding: utf8
+# -*- coding: utf-8 -*-
+
+"""Top-level package for SyllaPy."""
+
+__author__ = """Michael Holtzscher"""
+__email__ = 'mholtz@protonmail.com'
+__version__ = '0.2'
+
 from string import punctuation
 
 from .data_loader import load_dict
