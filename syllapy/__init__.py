@@ -7,8 +7,10 @@ __email__ = 'mholtz@protonmail.com'
 __version__ = '0.1.1'
 
 from string import punctuation
-
 from .data_loader import load_dict
+import logging
+
+log = logging.getLogger(__name__)
 
 # load the known words dictionary
 word_dict = load_dict()
@@ -23,6 +25,7 @@ def count(word):
         return 0
     if word in word_dict:
         return word_dict[word]
+    log.info("'%s' not found in known word list.", word)
     return _syllables(word)
 
 
