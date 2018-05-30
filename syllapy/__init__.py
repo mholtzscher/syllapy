@@ -10,6 +10,7 @@ from string import punctuation
 
 from .data_loader import load_dict
 
+# load the known words dictionary
 word_dict = load_dict()
 
 

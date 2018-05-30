@@ -4,8 +4,8 @@ import pkg_resources
 
 
 def load_dict():
-    path = 'data.csv'  # always use slash
-    file_path = pkg_resources.resource_filename(__name__, path)
+    file_name = 'data.csv'
+    file_path = pkg_resources.resource_filename(__name__, file_name)
     words = {}
     with open(file_path, newline='') as csv_file:
         reader = csv.reader(csv_file, delimiter=',')
