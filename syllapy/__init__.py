@@ -14,8 +14,7 @@ word_dict = load_dict()
 
 
 def count(word):
-    """Returns number of syllables in a word. If the word is None or empty then returns 0.
-    If word is not a string then returns None."""
+    """Returns number of syllables in a word. If the word is None, not a string, or empty then returns 0."""
     if not isinstance(word, str):
         return 0
     word = word.strip().lower().strip(punctuation)
