@@ -36,6 +36,10 @@ def count(word: str) -> int:
 
 
 def _syllables(word: str) -> int:
+    """
+    :param word:
+    :return:
+    """
     syllable_count = 0
     vowels = 'aeiouy'
     if word[0] in vowels:
