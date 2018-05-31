@@ -18,7 +18,11 @@ word_dict = load_dict()
 
 
 def count(word: str) -> int:
-    """Returns number of syllables in a word. If the word is None, not a string, or empty then returns 0."""
+    """Returns number of syllables in a word. If the word is None, not a string, or empty then returns 0.
+    :rtype: int
+    :param word: the word to count syllables for
+    :return: the number of syllables in the word
+    """
     try:
         word = word.strip().lower().strip(punctuation)
         if len(word) == 0:
@@ -31,7 +35,7 @@ def count(word: str) -> int:
         return 0
 
 
-def _syllables(word):
+def _syllables(word: str) -> int:
     syllable_count = 0
     vowels = 'aeiouy'
     if word[0] in vowels:
