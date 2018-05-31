@@ -6,9 +6,10 @@ __author__ = """Michael Holtzscher"""
 __email__ = 'mholtz@protonmail.com'
 __version__ = '0.2.0'
 
-from string import punctuation
-from .data_loader import load_dict
 import logging
+from string import punctuation
+
+from .data_loader import load_dict
 
 log = logging.getLogger(__name__)
 
@@ -16,17 +17,18 @@ log = logging.getLogger(__name__)
 word_dict = load_dict()
 
 
-def count(word):
+def count(word: str) -> int:
     """Returns number of syllables in a word. If the word is None, not a string, or empty then returns 0."""
-    if not isinstance(word, str):
+    try:
+        word = word.strip().lower().strip(punctuation)
+        if len(word) == 0:
+            return 0
+        if word in word_dict:
+            return word_dict[word]
+        log.info("'%s' not found in known word list.", word)
+        return _syllables(word)
+    except AttributeError:
         return 0
-    word = word.strip().lower().strip(punctuation)
-    if len(word) == 0:
-        return 0
-    if word in word_dict:
-        return word_dict[word]
-    log.info("'%s' not found in known word list.", word)
-    return _syllables(word)
 
 
 def _syllables(word):
