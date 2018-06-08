@@ -3,8 +3,8 @@
 """Top-level package for SyllaPy."""
 
 __author__ = """Michael Holtzscher"""
-__email__ = 'mholtz@protonmail.com'
-__version__ = '0.2.0'
+__email__ = "mholtz@protonmail.com"
+__version__ = "0.2.0"
 
 import logging
 from string import punctuation
@@ -37,15 +37,15 @@ def count(word: str) -> int:
 
 def _syllables(word: str) -> int:
     syllable_count = 0
-    vowels = 'aeiouy'
+    vowels = "aeiouy"
     if word[0] in vowels:
         syllable_count += 1
     for index in range(1, len(word)):
         if word[index] in vowels and word[index - 1] not in vowels:
             syllable_count += 1
-    if word.endswith('e'):
+    if word.endswith("e"):
         syllable_count -= 1
-    if word.endswith('le') and len(word) > 2 and word[-3] not in vowels:
+    if word.endswith("le") and len(word) > 2 and word[-3] not in vowels:
         syllable_count += 1
     if syllable_count == 0:
         syllable_count += 1
