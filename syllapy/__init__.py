@@ -29,7 +29,7 @@ def count(word: str) -> int:
             return 0
         if word in word_dict:
             return word_dict[word]
-        log.debug("'%s' not found in known word list.", word)
+        log.debug(f"'{word}' not found in known word list.")
         return _syllables(word)
     except AttributeError:
         return 0
