@@ -38,10 +38,10 @@ def test_punctuation_only():
 
 
 def test_not_in_dict():
-    assert 4 == syllapy.count('ostentatious')
+    assert 4 == syllapy.count("ostentatious")
 
 
 def test_in_dict():
-    assert 2 == syllapy.count('because')
-    assert 2 == syllapy.count('woman')
-    assert 5 == syllapy.count('international')
+    assert 2 == syllapy.count("because")
+    assert 2 == syllapy.count("woman")
+    assert 5 == syllapy.count("international")
