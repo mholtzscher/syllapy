@@ -10,4 +10,4 @@ twine==1.11.0
 
 pytest==3.6.1
 pytest-runner==4.2
-black==18.6b2
+black==18.6b3
