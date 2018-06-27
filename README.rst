@@ -13,10 +13,13 @@ SyllaPy
         :target: https://syllapy.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-
 .. image:: https://pyup.io/repos/github/mholtzscher/syllapy/shield.svg
      :target: https://pyup.io/repos/github/mholtzscher/syllapy/
      :alt: Updates
+
+.. image:: https://api.codacy.com/project/badge/Grade/53a762a9d4ef40ee92fea927774dfc9f    
+    :target: https://www.codacy.com/app/mholtzscher/syllapy?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mholtzscher/syllapy&amp;utm_campaign=Badge_Grade
+    :alt: Codacy
 
 
 
