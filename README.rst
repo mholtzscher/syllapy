@@ -50,3 +50,8 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+.. image:: https://api.codacy.com/project/badge/Grade/ef96f163c4b3404089becd50f1fb2c58
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/app/mholtzscher/syllapy?utm_source=github.com&utm_medium=referral&utm_content=mholtzscher/syllapy&utm_campaign=badger
