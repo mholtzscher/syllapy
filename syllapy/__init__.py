@@ -4,7 +4,7 @@
 
 __author__ = """Michael Holtzscher"""
 __email__ = "mholtz@protonmail.com"
-__version__ = "__version__ = '0.4.0'"
+__version__ = "__version__ = '0.3.0'"
 
 import logging
 from string import punctuation
