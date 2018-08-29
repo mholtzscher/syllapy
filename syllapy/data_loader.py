@@ -4,7 +4,7 @@ import csv
 import pkg_resources
 
 
-def load_dict():
+def load_dict() -> dict:
     """
     Loads reference data to dictionary.
     :return: dictionary of the syllable reference data
