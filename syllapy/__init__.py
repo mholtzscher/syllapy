@@ -11,10 +11,10 @@ from string import punctuation
 
 from .data_loader import load_dict
 
-log = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
 # load the known words dictionary
-word_dict = load_dict()
+WORD_DICT = load_dict()
 
 
 def count(word: str) -> int:
@@ -27,9 +27,9 @@ def count(word: str) -> int:
         word = word.strip().lower().strip(punctuation)
         if len(word) == 0:
             return 0
-        if word in word_dict:
-            return word_dict[word]
-        log.debug(f"'{word}' not found in known word list.")
+        if word in WORD_DICT:
+            return WORD_DICT[word]
+        LOGGER.debug(f"'{word}' not found in known word list.")
         return _syllables(word)
     except AttributeError:
         return 0
