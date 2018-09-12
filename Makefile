@@ -1,88 +1,28 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
-.DEFAULT_GOAL := help
+.PHONY: docs
+init:
+	pip install pipenv --upgrade
+	pipenv install --dev --skip-lock
+test:
+	# This runs all of the tests, on both Python 2 and Python 3.
+	detox
+ci:
+	pipenv run py.test
 
-define BROWSER_PYSCRIPT
-import os, webbrowser, sys
+test-readme:
+	@pipenv run python setup.py check --restructuredtext --strict && ([ $$? -eq 0 ] && echo "README.rst and HISTORY.rst ok") || echo "Invalid markup in README.rst or HISTORY.rst!"
 
-try:
-	from urllib import pathname2url
-except:
-	from urllib.request import pathname2url
+flake8:
+	pipenv run flake8 --ignore=E501,F401,E128,E402,E731,F821 requests
 
-webbrowser.open("file://" + pathname2url(os.path.abspath(sys.argv[1])))
-endef
-export BROWSER_PYSCRIPT
+coverage:
+	pipenv run py.test --cov-config .coveragerc --verbose --cov-report term --cov-report xml --cov=requests tests
 
-define PRINT_HELP_PYSCRIPT
-import re, sys
-
-for line in sys.stdin:
-	match = re.match(r'^([a-zA-Z_-]+):.*?## (.*)$$', line)
-	if match:
-		target, help = match.groups()
-		print("%-20s %s" % (target, help))
-endef
-export PRINT_HELP_PYSCRIPT
-
-BROWSER := python -c "$$BROWSER_PYSCRIPT"
-
-help:
-	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
-
-clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
-
-clean-build: ## remove build artifacts
-	rm -fr build/
-	rm -fr dist/
-	rm -fr .eggs/
-	find . -name '*.egg-info' -exec rm -fr {} +
-	find . -name '*.egg' -exec rm -f {} +
-
-clean-pyc: ## remove Python file artifacts
-	find . -name '*.pyc' -exec rm -f {} +
-	find . -name '*.pyo' -exec rm -f {} +
-	find . -name '*~' -exec rm -f {} +
-	find . -name '__pycache__' -exec rm -fr {} +
-
-clean-test: ## remove test and coverage artifacts
-	rm -fr .tox/
-	rm -f .coverage
-	rm -fr htmlcov/
-	rm -fr .pytest_cache
-
-lint: ## check style with flake8
-	flake8 syllapy tests
-
-test: ## run tests quickly with the default Python
-	py.test
-
-test-all: ## run tests on every Python version with tox
-	tox
-
-coverage: ## check code coverage quickly with the default Python
-	coverage run --source syllapy -m pytest
-	coverage report -m
-	coverage html
-	$(BROWSER) htmlcov/index.html
-
-docs: ## generate Sphinx HTML documentation, including API docs
-	rm -f docs/syllapy.rst
-	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ syllapy
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
-	$(BROWSER) docs/_build/html/index.html
-
-servedocs: docs ## compile the docs watching for changes
-	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
-
-release: dist ## package and upload a release
+publish:
+	pip install 'twine>=1.5.0'
+	python setup.py sdist bdist_wheel
 	twine upload dist/*
+	rm -fr build dist .egg requests.egg-info
 
-dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
-	ls -l dist
-
-install: clean ## install the package to the active Python's site-packages
-	python setup.py install
+docs:
+	cd docs && make html
+	@echo "\033[95m\n\nBuild successful! View the docs homepage at docs/_build/html/index.html.\n\033[0m"

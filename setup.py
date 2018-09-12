@@ -3,7 +3,18 @@
 
 """The setup script."""
 
+import os
+import sys
+
+from codecs import open
+
 from setuptools import setup, find_packages
+
+# 'setup.py publish' shortcut.
+if sys.argv[-1] == 'publish':
+    os.system('python setup.py sdist bdist_wheel')
+    os.system('twine upload dist/*')
+    sys.exit()
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()

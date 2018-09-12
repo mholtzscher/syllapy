@@ -1,32 +1,22 @@
-# Config file for automatic testing at travis-ci.org
-
+sudo: false
 language: python
-python:
-  - 3.6
-# Enable 3.7 without globally enabling sudo and dist: xenial for other build jobs
-matrix:
+# command to install dependencies
+install: "make"
+# command to run tests
+script:
+  - make ci
+cache: pip
+jobs:
   include:
-    - python: 3.7
+    - stage: test
+      script:
+        - make test-readme
+        - make ci
+      python: '3.6'
+    - stage: test
+      script:
+        - make test-readme
+        - make ci
+      python: '3.7'
       dist: xenial
       sudo: true
-
-# Command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -U tox-travis
-
-# Command to run tests, e.g. python setup.py test
-script: tox
-
-# Assuming you have installed the travis-ci CLI tool, after you
-# create the Github repo and add it to Travis, run the
-# following command to finish PyPI deployment setup:
-# $ travis encrypt --add deploy.password
-deploy:
-  provider: pypi
-  distributions: sdist bdist_wheel
-  user: mholtzscher
-  password:
-    secure: L08SDHcyfvJvDFY7HtM3TMrezrOFe3bcfiLa156swgUI0Pm/CpVs5tJcmHiRaAPLoYpoUt2wCV901oCwpCKtiRECpcP6Rx4jq8HIJb2N/4blW3m7HGnr4l8ywDjDtomP4VCe4U5V4z6MHWE6ygtcpzeXLEQQSN55fx0OUJ2cs5q3sG2U+s70W8mtTO9M8EkboJtZ0rbOQPtn3BgnGC/SjqfDaXz7cuejAG5ZoDo+Y/HsvOuOgABo4n7YYfs0/EANSZeOt4lgbscpEgBIoa6gN1UIwG1SFCPNCDqUnNiVjYXl91oywI2IUxLOqFMwqapjCDJkomZwwyB4NaDgnTuhS9SPP3yyRsz6XVFy0UMsu5BE/ld+Vm7LBQEAnUd5xGY+MtcHuXw5QT8s/P8VX+dgdIeoSLa5YJpNTlC/Wk6lNPr7Fk8v/ByGjvAg13DOqohhdh3s1/sHyZNNhs2G57m2h2Z1ZUqFZmDtjlD7vcv8iQYskPjfL09CuK7DnNVO6uOxCcpNdU0xwWpiVZiYnsmgriV0QWG1kKouUL/WQ/WiCGw8M9XWrrGXtyTHwwNgR7b4S+iwsphDg5OSVxbmA2BXSDp7HutKpVMqiGlOUQ0/xgamoqWqRbt9hpP+0+j6XU9f9AbU/3mhMLt41SZygAHJLloa7YrjR+SMGU+komSFD4s=
-  on:
-    tags: true
-    repo: mholtzscher/syllapy
-    python: 3.6
