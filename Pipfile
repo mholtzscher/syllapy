@@ -8,6 +8,8 @@ name = "pypi"
 [dev-packages]
 pytest = "*"
 pytest-runner = "*"
+docutils = "*"
+pygments = "*"
 
 [requires]
 python_version = "3.6"
