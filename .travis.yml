@@ -4,8 +4,6 @@ language: python
 install: "make"
 # command to run tests
 script:
-  - |
-    if [[ "$TRAVIS_PYTHON_VERSION" != "2.6" ]] ; then make test-readme; fi
   - make ci
 cache: pip
 jobs:
