@@ -11,6 +11,7 @@ pytest-runner = "*"
 docutils = "*"
 pygments = "*"
 detox = "*"
+codecov = "*"
 
 [requires]
 python_version = "3.6"
