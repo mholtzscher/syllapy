@@ -75,4 +75,5 @@ setup(
     url='https://github.com/mholtzscher/syllapy',
     version='0.4.0',
     zip_safe=False,
+    cmdclass={'test': PyTest},
 )
