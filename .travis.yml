@@ -14,16 +14,6 @@ jobs:
       script:
         - make test-readme
         - make ci
-      python: '3.4'
-    - stage: test
-      script:
-        - make test-readme
-        - make ci
-      python: '3.5'
-    - stage: test
-      script:
-        - make test-readme
-        - make ci
       python: '3.6'
     - stage: test
       script:
