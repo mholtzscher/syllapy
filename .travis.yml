@@ -21,7 +21,4 @@ jobs:
         - make ci
       python: '3.7'
       dist: xenial
-      sudo: true     
-    - stage: coverage
-      python: 3.6
-      script: codecov
+      sudo: true
