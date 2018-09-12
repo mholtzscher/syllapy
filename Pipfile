@@ -10,6 +10,7 @@ pytest = "*"
 pytest-runner = "*"
 docutils = "*"
 pygments = "*"
+detox = "*"
 
 [requires]
 python_version = "3.6"
