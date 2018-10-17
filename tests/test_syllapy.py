@@ -45,3 +45,10 @@ def test_in_dict():
     assert 2 == syllapy.count("because")
     assert 2 == syllapy.count("woman")
     assert 5 == syllapy.count("international")
+
+
+def test_case_insensitive():
+    assert 2 == syllapy.count("Norway")
+    assert 2 == syllapy.count("norway")
+    assert 3 == syllapy.count("Ohio")
+    assert 3 == syllapy.count("ohio")
