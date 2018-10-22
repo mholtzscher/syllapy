@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "syllapy"
+version = "0.5.0"
+description = ""
+authors = ["Michael Holtzscher <mholtz@protonmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.9"
+pytest-runner = "^4.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
