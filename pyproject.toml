@@ -1,9 +1,14 @@
 [tool.poetry]
 name = "syllapy"
 version = "0.5.0"
-description = ""
+description = "Calculate syllable counts for English words."
 authors = ["Michael Holtzscher <mholtz@protonmail.com>"]
 license = "MIT"
+readme = "README.md"
+repository = "https://github.com/mholtzscher/syllapy"
+homepage = "https://github.com/mholtzscher/syllapy"
+
+keywords = ['syllables', 'nlp']
 
 [tool.poetry.dependencies]
 python = "^3.6"
