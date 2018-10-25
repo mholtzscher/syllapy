@@ -20,7 +20,8 @@ WORD_DICT = load_dict()
 
 
 def count(word: str) -> int:
-    """Returns number of syllables in a word. If the word is None, not a string, or empty then returns 0.
+    """Returns number of syllables in a word.
+    If the word is None, not a string, contains invalid chars, or empty then returns 0.
     :rtype: int
     :param word: the word to count syllables for
     :return: the number of syllables in the word
@@ -28,14 +29,18 @@ def count(word: str) -> int:
     try:
         word = word.strip().lower().strip(punctuation)
         if len(word) == 0:
+            LOGGER.debug(f"'{word}' has length of zero after stripping extra chars.")
             return 0
-        if _contains_numbers(word):
-            raise ValueError("Word contains numbers.")
-        if word in WORD_DICT:
+        elif _contains_numbers(word):
+            LOGGER.debug(f"'{word}' contains numbers.")
+            return 0
+        elif word in WORD_DICT:
             return WORD_DICT[word]
-        LOGGER.debug(f"'{word}' not found in known word list.")
-        return _syllables(word)
+        else:
+            LOGGER.debug(f"'{word}' not found in known word list.")
+            return _syllables(word)
     except AttributeError:
+        LOGGER.debug(f"'{word}' raised an AttributeError.")
         return 0
 
 
