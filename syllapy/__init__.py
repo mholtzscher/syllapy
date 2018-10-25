@@ -7,11 +7,13 @@ __email__ = "mholtz@protonmail.com"
 __version__ = "0.5.0"
 
 import logging
+import re
 from string import punctuation
 
 from .data_loader import load_dict
 
 LOGGER = logging.getLogger(__name__)
+NUMBERS = re.compile(r"\d")
 
 # load the known words dictionary
 WORD_DICT = load_dict()
@@ -27,6 +29,8 @@ def count(word: str) -> int:
         word = word.strip().lower().strip(punctuation)
         if len(word) == 0:
             return 0
+        if _contains_numbers(word):
+            raise ValueError("Word contains numbers.")
         if word in WORD_DICT:
             return WORD_DICT[word]
         LOGGER.debug(f"'{word}' not found in known word list.")
@@ -50,3 +54,7 @@ def _syllables(word: str) -> int:
     if syllable_count == 0:
         syllable_count += 1
     return syllable_count
+
+
+def _contains_numbers(word: str) -> bool:
+    return bool(NUMBERS.search(word))
