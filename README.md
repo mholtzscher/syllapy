@@ -1,9 +1,11 @@
 SyllaPy
 =======
 
-[![PyPI version](https://badge.fury.io/py/syllapy.svg)](https://badge.fury.io/py/syllapy)
-
-[![Build Status](https://travis-ci.org/mholtzscher/syllapy.svg?branch=master)](https://travis-ci.org/mholtzscher/syllapy)
+<p>
+  <a href="https://badge.fury.io/py/syllapy"><img src="https://badge.fury.io/py/syllapy.svg" alt="PyPI version"></a>
+  <a href="https://travis-ci.org/mholtzscher/syllapy"><img src="https://travis-ci.org/mholtzscher/syllapy.svg?branch=master" alt="Travis CI"></a>
+  <a href="https://github.com/mholtzscher/syllapy"><img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Black"></a>
+</p>
 
 Calculate syllable counts for English words.
 
