@@ -9,3 +9,4 @@ repos:
   rev: v2.1.1
   hooks:
   - id: pylint
+    python_version: python3.6
