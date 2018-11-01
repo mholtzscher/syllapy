@@ -1,7 +1,7 @@
 """Loads reference data to memory."""
-import ujson
-
 import pkg_resources
+
+import ujson
 
 
 def load_dict() -> dict:

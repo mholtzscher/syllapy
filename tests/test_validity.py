@@ -1,13 +1,18 @@
+"""Tests for `syllapy` word validity."""
+
 import syllapy
 
 
 def test_number_in_word():
-    assert 0 == syllapy.count("d0g")
+    """Test number in word"""
+    assert syllapy.count("d0g") == 0
 
 
 def test_number_start_word():
-    assert 0 == syllapy.count("4dog")
+    """Test number at start of word"""
+    assert syllapy.count("4dog") == 0
 
 
 def test_number_end_word():
-    assert 0 == syllapy.count("dog123")
+    """Test number at end of word"""
+    assert syllapy.count("dog123") == 0

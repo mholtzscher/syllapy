@@ -28,7 +28,7 @@ def count(word: str) -> int:
     """
     try:
         word = word.strip().lower().strip(punctuation)
-        if len(word) == 0:
+        if not word:
             LOGGER.debug(f"'{word}' has length of zero after stripping extra chars.")
             return 0
         elif _contains_numbers(word):
