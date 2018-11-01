@@ -4,9 +4,3 @@ repos:
   hooks:
   - id: black
     python_version: python3.6
-
-- repo: https://github.com/pre-commit/mirrors-pylint
-  rev: v2.1.1
-  hooks:
-  - id: pylint
-    python_version: python3.6
