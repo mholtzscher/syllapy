@@ -39,8 +39,6 @@ jobs:
 
     - stage: mypy
       python: "3.6"
-      install:
-        - pip install mypy
       script:
         - mypy syllapy
 
