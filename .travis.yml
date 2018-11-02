@@ -40,4 +40,4 @@ jobs:
       install:
         - pip install mypy
       script:
-        - mypy msrest
+        - mypy syllapy
