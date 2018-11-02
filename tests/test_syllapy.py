@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """Tests for `syllapy` package."""
 
 from string import punctuation
@@ -9,46 +6,56 @@ import syllapy
 
 
 def test_simple():
-    assert 1 == syllapy.count("dog!!!!!")
+    """Simple Test."""
+    assert syllapy.count("dog!!!!!") == 1
 
 
 def test_none():
-    assert 0 == syllapy.count(None)
+    """Testing passing `None` type."""
+    assert syllapy.count(None) == 0
 
 
 def test_bool():
-    assert 0 == syllapy.count(True)
+    """Testing passing `bool` type."""
+    assert syllapy.count(True) == 0
 
 
 def test_int():
-    assert 0 == syllapy.count(2)
+    """Testing passing `None` type."""
+    assert syllapy.count(2) == 0
 
 
 def test_empty():
-    assert 0 == syllapy.count("")
+    """Test empty string"""
+    assert syllapy.count("") == 0
 
 
 def test_space():
-    assert 0 == syllapy.count(" ")
+    """Testing passing space"""
+    assert syllapy.count(" ") == 0
 
 
 def test_punctuation_only():
-    for p in punctuation:
-        assert 0 == syllapy.count(p)
+    """Testing punctuation only"""
+    for punct in punctuation:
+        assert syllapy.count(punct) == 0
 
 
 def test_not_in_dict():
-    assert 4 == syllapy.count("ostentatious")
+    """Test word not in known dataset"""
+    assert syllapy.count("ostentatious") == 4
 
 
 def test_in_dict():
-    assert 2 == syllapy.count("because")
-    assert 2 == syllapy.count("woman")
-    assert 5 == syllapy.count("international")
+    """Test words in known dataset"""
+    assert syllapy.count("because") == 2
+    assert syllapy.count("woman") == 2
+    assert syllapy.count("international") == 5
 
 
 def test_case_insensitive():
-    assert 2 == syllapy.count("Norway")
-    assert 2 == syllapy.count("norway")
-    assert 3 == syllapy.count("Ohio")
-    assert 3 == syllapy.count("ohio")
+    """Test words changing capitalization"""
+    assert syllapy.count("Norway") == 2
+    assert syllapy.count("norway") == 2
+    assert syllapy.count("Ohio") == 3
+    assert syllapy.count("ohio") == 3
