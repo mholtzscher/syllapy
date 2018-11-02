@@ -2,6 +2,7 @@ language: python
 
 stages:
   - linting
+  - mypy
   - test
 
 cache:
@@ -34,3 +35,10 @@ jobs:
         - pre-commit install-hooks
       script:
         - pre-commit run --all-files
+
+    - stage: mypy
+      python: "3.6"
+      install:
+        - pip install mypy
+      script:
+        - mypy syllapy
