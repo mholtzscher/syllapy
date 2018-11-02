@@ -1,8 +1,9 @@
 language: python
 
 stages:
-  - linting
+  - black
   - mypy
+  - pylint
   - test
 
 cache:
@@ -28,7 +29,7 @@ jobs:
     - python: "3.7.1"
       dist: xenial
 
-    - stage: linting
+    - stage: Black
       python: "3.6"
       install:
         - pip install pre-commit
@@ -38,7 +39,10 @@ jobs:
 
     - stage: mypy
       python: "3.6"
-      install:
-        - pip install mypy
       script:
         - mypy syllapy
+
+    - stage: pylint
+      python: "3.6"
+      script:
+        - pylint syllapy
