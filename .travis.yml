@@ -34,3 +34,10 @@ jobs:
         - pre-commit install-hooks
       script:
         - pre-commit run --all-files
+
+    - stage: MyPy
+      python: "3.6"
+      install:
+        - pip install mypy
+      script:
+        - mypy msrest

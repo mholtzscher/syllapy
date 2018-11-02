@@ -19,13 +19,7 @@ NUMBERS = re.compile(r"\d")
 WORD_DICT = load_dict()
 
 
-def count(word: str) -> int:
-    """Returns number of syllables in a word.
-    If the word is None, not a string, contains invalid chars, or empty then returns 0.
-    :rtype: int
-    :param word: the word to count syllables for
-    :return: the number of syllables in the word
-    """
+def count(word: float) -> int:
     try:
         word = word.strip().lower().strip(punctuation)
         if not word:
