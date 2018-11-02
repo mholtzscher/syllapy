@@ -31,14 +31,13 @@ def count(word: str) -> int:
         if not word:
             LOGGER.debug(f"'{word}' has length of zero after stripping extra chars.")
             return 0
-        elif _contains_numbers(word):
+        if _contains_numbers(word):
             LOGGER.debug(f"'{word}' contains numbers.")
             return 0
-        elif word in WORD_DICT:
+        if word in WORD_DICT:
             return WORD_DICT[word]
-        else:
-            LOGGER.debug(f"'{word}' not found in known word list.")
-            return _syllables(word)
+        LOGGER.debug(f"'{word}' not found in known word list.")
+        return _syllables(word)
     except AttributeError:
         LOGGER.debug(f"'{word}' raised an AttributeError.")
         return 0
