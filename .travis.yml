@@ -1,7 +1,7 @@
 language: python
 
 stages:
-  - linting
+  - black
   - mypy
   - pylint
   - test
