@@ -36,7 +36,7 @@ jobs:
       script:
         - pre-commit run --all-files
 
-    - stage: MyPy
+    - stage: mypy
       python: "3.6"
       install:
         - pip install mypy
