@@ -20,6 +20,8 @@ install:
   - poetry install -v
 
 script: make test
+after_success:
+  - codecov
 
 jobs:
   include:
