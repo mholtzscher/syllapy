@@ -15,11 +15,13 @@ cache:
 install:
   - pip install pip -U
   - wget https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py
-  - python get-poetry.py --preview -y
+  - python get-poetry.py -y
   - source $HOME/.poetry/env
   - poetry install -v
 
-script: pytest -q tests/
+script: make test
+after_success:
+  - poetry run codecov
 
 jobs:
   include:
@@ -40,9 +42,9 @@ jobs:
     - stage: mypy
       python: "3.6"
       script:
-        - mypy syllapy
+        - make mypy
 
     - stage: pylint
       python: "3.6"
       script:
-        - pylint syllapy
+        - make lint

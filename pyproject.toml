@@ -13,6 +13,8 @@ keywords = ['syllables', 'nlp']
 [tool.poetry.dependencies]
 python = "^3.6"
 ujson = "^1.35"
+pytest-cov = "^2.6"
+codecov = "^2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.9"
