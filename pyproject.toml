@@ -13,8 +13,6 @@ keywords = ['syllables', 'nlp']
 [tool.poetry.dependencies]
 python = "^3.6"
 ujson = "^1.35"
-pytest-cov = "^2.6"
-codecov = "^2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^3.9"
@@ -23,6 +21,8 @@ black = "^18.3-alpha.0"
 pre-commit = "^1.11"
 pylint = "^2.1"
 mypy = "^0.641.0"
+codecov = "^2.0"
+pytest-cov = "^2.6"
 
 [build-system]
 requires = ["poetry>=0.12"]
