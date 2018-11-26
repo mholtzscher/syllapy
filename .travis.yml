@@ -21,7 +21,7 @@ install:
 
 script: make test
 after_success:
-  - codecov
+  - poetry run codecov
 
 jobs:
   include:
