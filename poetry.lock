@@ -35,7 +35,7 @@ python = "<3.7"
 version = "*"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Atomic file writes."
 name = "atomicwrites"
 optional = false
@@ -43,7 +43,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "1.2.1"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Classes Without Boilerplate"
 name = "attrs"
 optional = false
@@ -73,7 +73,7 @@ python-versions = "*"
 version = "1.5.1"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
 optional = false
@@ -92,7 +92,7 @@ version = "1.1.0"
 six = "*"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Universal encoding detector for Python 2 and 3"
 name = "chardet"
 optional = false
@@ -108,7 +108,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "7.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Hosted coverage reports for Github, Bitbucket and Gitlab"
 name = "codecov"
 optional = false
@@ -120,7 +120,7 @@ coverage = "*"
 requests = ">=2.7.9"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Cross-platform colored terminal text."
 marker = "sys_platform == \"win32\""
 name = "colorama"
@@ -129,7 +129,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.4.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Code coverage measurement for Python"
 name = "coverage"
 optional = false
@@ -145,7 +145,7 @@ python-versions = "*"
 version = "1.1.7"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Internationalized Domain Names in Applications (IDNA)"
 name = "idna"
 optional = false
@@ -198,7 +198,7 @@ python-versions = "*"
 version = "0.6.1"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "More routines for operating on iterables, beyond itertools"
 name = "more-itertools"
 optional = false
@@ -237,7 +237,7 @@ python-versions = "*"
 version = "1.3.2"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "plugin and hook calling mechanisms for python"
 name = "pluggy"
 optional = false
@@ -269,7 +269,7 @@ python = "<3.7"
 version = "*"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "library with cross-python path, ini-parsing, io, code, log facilities"
 name = "py"
 optional = false
@@ -291,7 +291,7 @@ isort = ">=4.2.5"
 mccabe = "*"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "pytest: simple powerful testing with Python"
 name = "pytest"
 optional = false
@@ -309,7 +309,7 @@ setuptools = "*"
 six = ">=1.10.0"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Pytest plugin for measuring coverage."
 name = "pytest-cov"
 optional = false
@@ -337,7 +337,7 @@ python-versions = "*"
 version = "3.13"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python HTTP for Humans."
 name = "requests"
 optional = false
@@ -351,7 +351,7 @@ idna = ">=2.5,<2.8"
 urllib3 = ">=1.21.1,<1.25"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python 2 and 3 compatibility utilities"
 name = "six"
 optional = false
@@ -383,7 +383,7 @@ python-versions = "*"
 version = "1.35"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 name = "urllib3"
 optional = false
@@ -416,7 +416,7 @@ python-versions = "*"
 version = "1.10.11"
 
 [metadata]
-content-hash = "bcd5ea39ee53f751e99bcd0990276b78dc7b9c7b6533a4dfefd9f3d32a3da3c2"
+content-hash = "213b07ed9849130ac89d1325393c38c74f44fd856144aad73d0b60adf9aacaf9"
 python-versions = "^3.6"
 
 [metadata.hashes]
