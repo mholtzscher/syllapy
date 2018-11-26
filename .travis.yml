@@ -20,16 +20,17 @@ install:
   - poetry install -v
 
 script: make test
-after_success:
-  - poetry run codecov
 
 jobs:
   include:
     - python: "3.6"
+      after_success: poetry run codecov
     - python: "3.7"
       dist: xenial
+      after_success: poetry run codecov
     - python: "3.7.1"
       dist: xenial
+      after_success: poetry run codecov
 
     - stage: Black
       python: "3.6"
