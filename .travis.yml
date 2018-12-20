@@ -49,3 +49,12 @@ jobs:
     - stage: pylint
       script:
         - make lint
+
+deploy:
+  - provider: script
+    script: poetry publish --username mholtzscher --password $PYPI_PASS --build
+    on:
+      repo: mholtzscher/syllapy
+      branch: master
+      python: "3.7"
+      tags: true
