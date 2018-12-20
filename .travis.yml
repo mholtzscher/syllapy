@@ -28,7 +28,7 @@ jobs:
   include:
     - python: "3.6"
       after_success: poetry run codecov
-    - python: "3.7"
+    - python: "3.7.0"
       dist: xenial
       after_success: poetry run codecov
     - python: "3.7.1"
