@@ -33,7 +33,7 @@ jobs:
       after_success: poetry run codecov
 
     - stage: Black
-      python: "3.6"
+      python: "3.7"
       install:
         - pip install pre-commit
         - pre-commit install-hooks
@@ -41,11 +41,11 @@ jobs:
         - pre-commit run --all-files
 
     - stage: mypy
-      python: "3.6"
+      python: "3.7"
       script:
         - make mypy
 
     - stage: pylint
-      python: "3.6"
+      python: "3.7"
       script:
         - make lint
