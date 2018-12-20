@@ -21,6 +21,9 @@ install:
 
 script: make test
 
+python: "3.7"
+dist: xenial
+
 jobs:
   include:
     - python: "3.6"
@@ -33,7 +36,6 @@ jobs:
       after_success: poetry run codecov
 
     - stage: Black
-      python: "3.7"
       install:
         - pip install pre-commit
         - pre-commit install-hooks
@@ -41,11 +43,9 @@ jobs:
         - pre-commit run --all-files
 
     - stage: mypy
-      python: "3.7"
       script:
         - make mypy
 
     - stage: pylint
-      python: "3.7"
       script:
         - make lint
