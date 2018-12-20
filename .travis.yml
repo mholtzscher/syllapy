@@ -5,6 +5,8 @@ stages:
   - mypy
   - pylint
   - test
+  - name: deploy
+    if: tag IS present
 
 cache:
   pip: true
@@ -50,11 +52,6 @@ jobs:
       script:
         - make lint
 
-deploy:
-  - provider: script
-    script: poetry publish --username mholtzscher --password $PYPI_PASS --build
-    on:
-      repo: mholtzscher/syllapy
-      branch: master
-      python: "3.7"
-      tags: true
+    - stage: deploy
+      script:
+        - poetry publish --username mholtzscher --password $PYPI_PASS --build
