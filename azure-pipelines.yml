@@ -33,7 +33,7 @@ jobs:
 
   - script: |
       make ci-test
-      codecov
+      poetry run codecov
     displayName: 'pytest'
     env:
       CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
