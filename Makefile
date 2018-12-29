@@ -5,6 +5,9 @@ setup:
 test:
 	poetry run pytest --cov=syllapy -q tests/
 
+ci-test:
+	poetry run pytest tests/ --cov=syllapy --junitxml=junit/test-results.xml
+
 lint:
 	poetry run pylint syllapy
 

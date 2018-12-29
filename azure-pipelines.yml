@@ -32,14 +32,14 @@ jobs:
     displayName: 'Install dependencies'
 
   - script: |
-      python -m pytest test/ --junitxml=junit/test-results.xml --cov=syllapy/
+      make ci-test
       codecov
     displayName: 'pytest'
     env:
       CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
   
-  - script: pydocstyle --ignore=D301,D212,D203 syllapy
-    displayName: 'pydocstyle'
+  # - script: pydocstyle --ignore=D301,D212,D203 syllapy
+  #   displayName: 'pydocstyle'
 
   - task: PublishTestResults@2
     inputs:
@@ -71,7 +71,7 @@ jobs:
     displayName: 'Install dependencies'
 
   - script: |
-      pytest test --junitxml=junit\test-results.xml
+      make ci-test
     displayName: 'pytest'
 
   - task: PublishTestResults@2
