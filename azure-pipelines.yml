@@ -36,7 +36,7 @@ jobs:
       codecov
     displayName: 'pytest'
     env:
-      CODECOV_TOKEN: ''
+      CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
   
   - script: pydocstyle --ignore=D301,D212,D203 syllapy
     displayName: 'pydocstyle'
