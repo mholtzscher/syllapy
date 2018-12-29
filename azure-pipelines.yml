@@ -29,17 +29,14 @@ jobs:
       python -m pip install --upgrade pip
       pip install poetry
       poetry install
-    displayName: 'Install dependencies'
+    displayName: 'Install Dependencies'
 
   - script: |
       make ci-test
-      poetry run codecov
+      make codecov
     displayName: 'pytest'
     env:
       CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
-  
-  # - script: pydocstyle --ignore=D301,D212,D203 syllapy
-  #   displayName: 'pydocstyle'
 
   - task: PublishTestResults@2
     inputs:
@@ -68,7 +65,7 @@ jobs:
       python -m pip install --upgrade pip
       pip install poetry
       poetry install
-    displayName: 'Install dependencies'
+    displayName: 'Install Dependencies'
 
   - script: |
       make ci-test
