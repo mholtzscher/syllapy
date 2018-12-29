@@ -31,6 +31,15 @@ jobs:
       poetry install
     displayName: 'Install Dependencies'
 
+  - script: make format
+    displayName: 'black'
+
+  - script: make lint
+    displayName: 'pylint'
+
+  - script: make mypy
+    displayName: 'mypy'
+
   - script: |
       make ci-test
       make codecov
