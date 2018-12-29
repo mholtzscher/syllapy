@@ -29,17 +29,21 @@ jobs:
       python -m pip install --upgrade pip
       pip install poetry
       poetry install
-    displayName: 'Install dependencies'
+    displayName: 'Install Dependencies'
 
-  - script: |
-      python -m pytest test/ --junitxml=junit/test-results.xml --cov=syllapy/
-      codecov
+  - script: make format
+    displayName: 'black'
+
+  - script: make lint
+    displayName: 'pylint'
+
+  - script: make mypy
+    displayName: 'mypy'
+
+  - script: make ci-test
     displayName: 'pytest'
     env:
-      CODECOV_TOKEN: ''
-  
-  - script: pydocstyle --ignore=D301,D212,D203 syllapy
-    displayName: 'pydocstyle'
+      CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
 
   - task: PublishTestResults@2
     inputs:
@@ -68,10 +72,10 @@ jobs:
       python -m pip install --upgrade pip
       pip install poetry
       poetry install
-    displayName: 'Install dependencies'
+    displayName: 'Install Dependencies'
 
   - script: |
-      pytest test --junitxml=junit\test-results.xml
+      make ci-test
     displayName: 'pytest'
 
   - task: PublishTestResults@2
