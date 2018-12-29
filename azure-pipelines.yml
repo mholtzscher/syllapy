@@ -40,9 +40,7 @@ jobs:
   - script: make mypy
     displayName: 'mypy'
 
-  - script: |
-      make ci-test
-      make codecov
+  - script: make ci-test
     displayName: 'pytest'
     env:
       CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
