@@ -45,12 +45,6 @@ jobs:
     env:
       CODECOV_TOKEN: '6d3203bd-9965-40a1-9042-32ae8023fcc8'
 
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFiles: '**/test-results.xml'
-      testRunTitle: 'Python $(python.version)'
-    condition: succeededOrFailed()
-
 - job: 'Test_Windows'
   pool:
     vmImage: 'vs2017-win2016'
@@ -77,9 +71,3 @@ jobs:
   - script: |
       make ci-test
     displayName: 'pytest'
-
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFiles: '**\test-results.xml'
-      testRunTitle: 'Python $(python.version)'
-    condition: succeededOrFailed()
