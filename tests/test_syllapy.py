@@ -8,7 +8,6 @@ import syllapy
 def test_simple():
     """Simple Test."""
     assert syllapy.count("dog!!!!!") == 1
-    assert True == False
 
 
 def test_none():
