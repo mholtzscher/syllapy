@@ -6,7 +6,7 @@ test:
 	poetry run pytest --cov=syllapy -q tests/
 
 ci-test:
-	poetry run pytest tests/ --cov=syllapy
+	poetry run pytest tests/ --cov=syllapy --cov-report html
 	poetry run codecov
 
 lint:
