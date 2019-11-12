@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "syllapy"
-version = "0.7.0"
+version = "0.7.1"
 description = "Calculate syllable counts for English words."
 authors = ["Michael Holtzscher <mholtz@protonmail.com>"]
 license = "MIT"
