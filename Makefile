@@ -1,19 +1,16 @@
 setup:
-	poetry install
-	poetry run pre-commit install
+	pip install --upgrade pip
+	pip install -r requirements.txt
+	pre-commit install
 
 test:
-	poetry run pytest --cov=syllapy -q tests/
-
-ci-test:
-	poetry run pytest tests/ --cov=syllapy --cov-report html
-	poetry run codecov
+	pytest --cov=syllapy -q tests/
 
 lint:
-	poetry run pylint syllapy
+	flake8
 
 mypy:
-	poetry run mypy syllapy
+	mypy syllapy
 
 format:
-	poetry run black syllapy tests
+	black syllapy tests setup.py

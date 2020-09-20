@@ -1,0 +1,7 @@
+pytest
+pytest-runner
+pytest-cov
+black
+pre-commit
+flake8
+mypy
