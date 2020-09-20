@@ -36,3 +36,6 @@ jobs:
     - name: Test with pytest
       run: |
         make test
+    - name: Check format
+      run: |
+        make format-check

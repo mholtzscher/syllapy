@@ -17,3 +17,6 @@ mypy:
 
 format:
 	black syllapy tests setup.py
+
+format-check:
+	black syllapy tests setup.py --check
