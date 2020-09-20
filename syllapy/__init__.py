@@ -29,17 +29,17 @@ def count(word: str) -> int:
     try:
         word = word.strip().lower().strip(punctuation)
         if not word:
-            LOGGER.debug(f"'{word}' has length of zero after stripping extra chars.")
+            LOGGER.debug("'%s' has length of zero after stripping extra chars.", word)
             return 0
         if _contains_numbers(word):
-            LOGGER.debug(f"'{word}' contains numbers.")
+            LOGGER.debug("'%s' contains numbers.", word)
             return 0
         if word in WORD_DICT:
             return WORD_DICT[word]
-        LOGGER.debug(f"'{word}' not found in known word list.")
+        LOGGER.debug("'%s' not found in known word list.", word)
         return _syllables(word)
     except AttributeError:
-        LOGGER.debug(f"'{word}' raised an AttributeError.")
+        LOGGER.debug("'%s' raised an AttributeError.", word)
         return 0
 
 
