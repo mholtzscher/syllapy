@@ -4,7 +4,7 @@ setup:
 	pre-commit install
 
 test:
-	pytest -q tests/
+	pytest tests/
 
 lint:
 	# stop the build if there are Python syntax errors or undefined names
