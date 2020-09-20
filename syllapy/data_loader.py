@@ -12,7 +12,7 @@ def load_dict() -> dict:
     file_path = pkg_resources.resource_filename(__name__, file_name)
     words = {}
 
-    with open(file_path, newline='') as file:
+    with open(file_path, newline="") as file:
         reader = csv.reader(file)
         for row in reader:
             words[row[0]] = int(row[1])
