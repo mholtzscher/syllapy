@@ -10,7 +10,7 @@ jobs:
 
 - job: 'Test_Linux'
   pool:
-    vmImage: 'Ubuntu-16.04'
+    vmImage: 'ubuntu-latest'
   strategy:
     matrix:
       Python36:
@@ -49,7 +49,7 @@ jobs:
 
 - job: 'Test_Windows'
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-latest'
   strategy:
     matrix:
       Python36:
