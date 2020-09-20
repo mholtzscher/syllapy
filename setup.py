@@ -22,5 +22,4 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[],
-    extras_require={"dev": ["black", "pre-commit", "pylint", "mypy", "codecov"]},
 )
