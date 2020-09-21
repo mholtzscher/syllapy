@@ -37,6 +37,18 @@ def count(word: str) -> int:
         if word in WORD_DICT:
             return WORD_DICT[word]
         LOGGER.debug(f"'{word}' not found in known word list.")
+
+        # compound words like self-care
+        r = re.match('([^-]+)-(.+)', word)
+        if r:
+            s1 = count(r.group(1))
+            s2 = count(r.group(2))
+            LOGGER.debug(f"'{word}' is compound of {r.group(1)} = {s1} and {r.group(2)} = {s2}")
+            if s1 == 0 or s2 == 0:
+                return 0
+            else:
+                return s1 + s2
+
         return _syllables(word)
     except AttributeError:
         LOGGER.debug(f"'{word}' raised an AttributeError.")
