@@ -1,19 +1,22 @@
 setup:
-	poetry install
-	poetry run pre-commit install
+	pip install --upgrade pip
+	pip install -r requirements.txt
+	pre-commit install
 
 test:
-	poetry run pytest --cov=syllapy -q tests/
-
-ci-test:
-	poetry run pytest tests/ --cov=syllapy --cov-report html
-	poetry run codecov
+	pytest tests/
 
 lint:
-	poetry run pylint syllapy
+	# stop the build if there are Python syntax errors or undefined names
+	flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+	# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+	flake8 . --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
 
 mypy:
-	poetry run mypy syllapy
+	mypy syllapy
 
 format:
-	poetry run black syllapy tests
+	black syllapy tests setup.py
+
+format-check:
+	black syllapy tests setup.py --check
