@@ -59,3 +59,14 @@ def test_case_insensitive():
     assert syllapy.count("norway") == 2
     assert syllapy.count("Ohio") == 3
     assert syllapy.count("ohio") == 3
+
+
+def test_hyphenated_words():
+    """Test words with hyphenation"""
+    assert syllapy.count("part-time") == 2
+    assert syllapy.count("one-on-one") == 3
+    assert syllapy.count("four-at-a-time") == 4
+
+    # Propagate 0 cases upwards
+    assert syllapy.count("4-at-a-time") == 0
+    assert syllapy.count("zero-for-2") == 0
