@@ -8,7 +8,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="syllapy",
-    version="0.7.1",
+    version="0.7.2",
     url="https://github.com/mholtzscher/syllapy",
     license="MIT",
     author="Michael Holtzscher",
