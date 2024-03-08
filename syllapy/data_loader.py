@@ -1,6 +1,7 @@
 """Loads reference data to memory."""
+
 import csv
-import pkg_resources
+import importlib.resources
 
 
 def load_dict() -> dict:
@@ -9,7 +10,7 @@ def load_dict() -> dict:
     :return: dictionary of the syllable reference data
     """
     file_name = "data.csv"
-    file_path = pkg_resources.resource_filename(__name__, file_name)
+    file_path = importlib.resources.files("syllapy").joinpath(file_name)
     words = {}
 
     with open(file_path, newline="") as file:
