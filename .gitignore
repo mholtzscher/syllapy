@@ -101,5 +101,9 @@ ENV/
 # mypy
 .mypy_cache/
 
+# devenv
+.devenv*
+devenv.local.nix
+
 .idea/
 .vscode/
